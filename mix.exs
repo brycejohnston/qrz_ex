@@ -12,8 +12,7 @@ defmodule QRZ.MixProject do
       elixir: "~> 1.14",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
-      description:
-        "QRZ.com XML Data Service client for amateur radio callsign related lookups in Elixir",
+      description: "QRZ.com XML Data Service client for amateur radio callsign lookups",
       deps: deps(),
       package: package(),
       docs: docs(),
