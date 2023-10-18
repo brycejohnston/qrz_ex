@@ -1,4 +1,6 @@
 defmodule QRZ.XpathAccessor do
+  @moduledoc false
+
   @behaviour DataSchema.DataAccessBehaviour
   import SweetXml, only: [sigil_x: 2]
 

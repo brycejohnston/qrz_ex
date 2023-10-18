@@ -1,4 +1,6 @@
 defmodule QRZ.Schema.Session do
+  @moduledoc false
+
   import DataSchema, only: [data_schema: 1]
 
   @data_accessor QRZ.XpathAccessor

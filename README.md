@@ -21,7 +21,8 @@ end
 
 ## Usage
 
-Queries require a valid QRZ account with an active [XML Logbook Data Subscription](https://shop.qrz.com/). See QRZ module documentation for additional details.
+Queries require a valid QRZ account with an active [XML Logbook Data Subscription](https://shop.qrz.com/). 
+See QRZ module documentation for additional details.
 
 ### Login
 
@@ -46,7 +47,7 @@ session.key
 
 ### Callsign Lookup
 
-Lookup callsign information. See docs for full list of callsign struct fields
+Lookup callsign information
 
 ```elixir
 {:ok, callsign} = QRZ.callsign(session.key, "aa7bq")

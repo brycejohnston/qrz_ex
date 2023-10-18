@@ -1,4 +1,6 @@
 defmodule QRZ.Schema.QRZDatabase do
+  @moduledoc false
+
   import DataSchema, only: [data_schema: 1]
   alias QRZ.Schema.Session
   alias QRZ.Schema.Callsign

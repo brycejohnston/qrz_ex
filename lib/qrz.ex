@@ -146,6 +146,10 @@ defmodule QRZ do
           notes: ""
         }}
 
+
+      iex> QRZ.dxcc("d0cf9d7b...", "777")
+      {:error, "No DXCC information for: 777"}
+
   """
   def dxcc(key, dxcc) do
     QRZ.API.dxcc(key, dxcc)
