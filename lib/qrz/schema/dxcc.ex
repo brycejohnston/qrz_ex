@@ -1,4 +1,4 @@
-defmodule QRZ.Schema.DXCC do
+defmodule QRZ.DXCC do
   @moduledoc false
 
   import DataSchema, only: [data_schema: 1]

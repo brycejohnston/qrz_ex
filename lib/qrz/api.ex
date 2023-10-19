@@ -1,9 +1,7 @@
 defmodule QRZ.API do
   @moduledoc false
 
-  alias QRZ.Schema.QRZDatabase
-
-  @agent "QRZex#{QRZ.MixProject.project()[:version]}"
+  @agent "QRZelixir#{QRZ.MixProject.project()[:version]}"
   @qrz_version 1.34
 
   def login(username, password) do
@@ -53,7 +51,7 @@ defmodule QRZ.API do
   end
 
   defp check_http_errors({:ok, body, 200}) do
-    {:ok, data} = DataSchema.to_struct(body, QRZDatabase)
+    {:ok, data} = DataSchema.to_struct(body, QRZ.Response)
     check_session_error(data.session.error, data)
   end
 

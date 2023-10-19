@@ -1,4 +1,4 @@
-defmodule QRZ.Schema.Callsign do
+defmodule QRZ.Callsign do
   @moduledoc false
 
   import DataSchema, only: [data_schema: 1]

@@ -14,7 +14,7 @@ defmodule QRZ do
 
       iex> QRZ.login("username", "password")
       {:ok,
-        %QRZ.Schema.Session{
+        %QRZ.Session{
           key: "d0cf9d7b3b937ed5f5de28ddf5a0122d",
           count: "6115",
           sub_exp: "Sat Mar  8 00:00:00 2025",
@@ -22,7 +22,6 @@ defmodule QRZ do
           message: "",
           error: ""
         }}
-
 
       iex> QRZ.login("bad_username", "bad_password")
       {:error, "Username/password incorrect "}
@@ -43,7 +42,7 @@ defmodule QRZ do
 
       iex> QRZ.callsign("d0cf9d7b...", "aa7bq")
       {:ok,
-        %QRZ.Schema.Callsign{
+        %QRZ.Callsign{
           call: "AA7BQ",
           xref: "",
           aliases: "N6UFT,AA7BQ/DL1,KJ6RK,AA7BQ/HR6",
@@ -95,7 +94,6 @@ defmodule QRZ do
           name_fmt: "FRED L LLOYD"
         }}
 
-
       iex> QRZ.callsign("d0cf9d7b...", "N0CALL")
       {:error, "Not found: N0CALL"}
 
@@ -115,7 +113,7 @@ defmodule QRZ do
 
       iex> QRZ.dxcc("d0cf9d7b...", "291")
       {:ok,
-        %QRZ.Schema.DXCC{
+        %QRZ.DXCC{
           dxcc: "291",
           cc: "US",
           ccc: "USA",
@@ -128,11 +126,10 @@ defmodule QRZ do
           lon: "-97.316895",
           notes: ""
         }}
-
 
       iex> QRZ.dxcc("d0cf9d7b...", "aa7bq")
       {:ok,
-        %QRZ.Schema.DXCC{
+        %QRZ.DXCC{
           dxcc: "291",
           cc: "US",
           ccc: "USA",
@@ -145,7 +142,6 @@ defmodule QRZ do
           lon: "-97.316895",
           notes: ""
         }}
-
 
       iex> QRZ.dxcc("d0cf9d7b...", "777")
       {:error, "No DXCC information for: 777"}

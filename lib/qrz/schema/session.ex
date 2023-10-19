@@ -1,4 +1,4 @@
-defmodule QRZ.Schema.Session do
+defmodule QRZ.Session do
   @moduledoc false
 
   import DataSchema, only: [data_schema: 1]

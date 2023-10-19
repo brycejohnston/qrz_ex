@@ -7,32 +7,33 @@
 
 [QRZ.com](https://www.qrz.com) elixir client for amateur radio callsign and DXCC lookups through their [XML Data Service](https://www.qrz.com/XML/current_spec.html).
 
+Queries require a QRZ account with an active [XML Logbook Data Subscription](https://shop.qrz.com/).
+
 ## Installation
 
-The package can be installed by adding qrz to your list of dependencies in mix.exs (coming soon):
+The package can be installed by adding qrz to your list of dependencies in mix.exs:
 
 ```elixir
 def deps do
   [
-    {:qrz, "~> 0.1.0"}
+    {:qrz, "~> 0.1.2"}
   ]
 end
 ```
 
 ## Usage
-
-Queries require a valid QRZ account with an active [XML Logbook Data Subscription](https://shop.qrz.com/). 
-See QRZ module documentation for additional details.
+ 
+See the [QRZ module documentation](https://hexdocs.pm/qrz/QRZ.html) for additional details.
 
 ### Login
 
-Login to get session key to use for lookups
+Login to get session key to use for lookups. Queries that result in session expiration will return an error tuple denoting it, requiring a login call to get a new session key.   
 
 ```elixir
 {:ok, session} = QRZ.login("username", "password")
 #=> 
 # {:ok,
-#   %QRZ.Schema.Session{
+#   %QRZ.Session{
 #     key: "d0cf9d7b3b937ed5f5de28ddf5a0122d",
 #     count: "6124",
 #     sub_exp: "Sat Mar  8 00:00:00 2025",
@@ -47,13 +48,15 @@ session.key
 
 ### Callsign Lookup
 
-Lookup callsign information
+Lookup callsign information.
+
+*Note: Currently every field is returned as a string, future versions may cast numerical and date related values in the future.*
 
 ```elixir
 {:ok, callsign} = QRZ.callsign(session.key, "aa7bq")
 #=> 
 # {:ok,
-#   %QRZ.Schema.Callsign{
+#   %QRZ.Callsign{
 #     call: "AA7BQ",
 #     xref: "",
 #     aliases: "N6UFT,AA7BQ/DL1,KJ6RK,AA7BQ/HR6",
@@ -78,7 +81,7 @@ Lookup DXCC entity information by entity code or callsign
 {:ok, dxcc} = QRZ.dxcc(session.key, "291")
 #=> 
 # {:ok,
-#   %QRZ.Schema.DXCC{
+#   %QRZ.DXCC{
 #     dxcc: "291",
 #     cc: "US",
 #     ccc: "USA",
