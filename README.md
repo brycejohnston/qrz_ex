@@ -16,7 +16,7 @@ The package can be installed by adding qrz to your list of dependencies in mix.e
 ```elixir
 def deps do
   [
-    {:qrz, "~> 0.1.2"}
+    {:qrz, "~> 0.1.3"}
   ]
 end
 ```
@@ -50,7 +50,7 @@ session.key
 
 Lookup callsign information.
 
-*Note: Currently every field is returned as a string, future versions may cast numerical and date related values in the future.*
+*Note: Currently every field is returned as a string, future versions may eventually cast numerical and date related values.*
 
 ```elixir
 {:ok, callsign} = QRZ.callsign(session.key, "aa7bq")

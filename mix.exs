@@ -1,8 +1,8 @@
 defmodule QRZ.MixProject do
   use Mix.Project
 
-  @source_url "https://github.com/brycejohnston/qrz_ex"
-  @version "0.1.2"
+  @source_url "https://github.com/APRSer/qrz_ex"
+  @version "0.1.3"
 
   def project do
     [
@@ -12,7 +12,7 @@ defmodule QRZ.MixProject do
       elixir: "~> 1.14",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
-      description: "QRZ.com XML Data Service client for amateur radio callsign and DXCC lookups",
+      description: "QRZ.com client for amateur radio callsign and DXCC lookups",
       deps: deps(),
       package: package(),
       docs: docs(),
